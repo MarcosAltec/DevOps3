@@ -1,0 +1,31 @@
+#Nomear o pipeline(fluxo de trabalho - workflow)
+name: Primeiro workflow
+
+#Listar ebentos que disparam o pipeline
+on:
+  push:
+    branches:
+      - main
+      - master
+      - developer
+  pull_request:
+    branches:
+      - main
+      - master
+      - developer
+      - hotfix
+
+#Quais trabalhos a serem executaods pelo workflow
+jobs:
+  trabalho1:
+    name: Passo 1
+    runs-on: ubuntu-latest
+
+#Programar passos do script
+    steps:
+      - name: Passo 1
+        run: echo "Executando o primeiro passo"
+      - name: Passo 2
+        run: echo "Executando o segundo passo"
+      - name: Passo 3
+        run: echo "Executando o terceiro passo"
